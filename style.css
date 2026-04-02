@@ -1,0 +1,374 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /* background-color: #F7F8FA; */
+    color: black;
+}
+
+.container {
+    gap: 10px;
+    background-color: #F7F8FA;
+    padding: 20px 24px 24px 24px;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+.top-link {
+    font-weight: 400;
+    font-style: Italic;
+    font-size: 12px;
+    color: black;
+    /* margin-bottom: 7px; */
+}
+
+.top-link:hover {
+    color: #4D4D4D;
+}
+
+
+.container h2 {
+    font-weight: 500;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.sub-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.add {
+    margin-right: 8px;
+}
+
+
+
+.sub-title p {
+    margin: 0;
+    color: #808080;
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+
+.wrapper {
+    /* gap: 24px; */
+    border-radius: 24px;
+    padding: 24px;
+    background: white;
+}
+
+/* YEAR ROW */
+.year-table {
+    width: 78%;
+    border-collapse: separate;
+    border-spacing: 6px 0;
+    margin-bottom: 12px;
+    margin-left: auto;
+}
+
+.year-table td {
+    padding: 8px 14px;
+    text-align: center;
+    background: #EEECE9;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.year-arrow {
+    width: 48px;
+    padding: 12px 15px;
+    background: #BFBCBA !important;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* MONTH ROW */
+.month-table {
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 12px;
+    /* border-collapse: separate;
+    border-spacing:6px 0; */
+}
+
+.month-table td {
+    padding: 0 3px;
+    border-radius: 6px;
+}
+
+.no {
+    padding: 10px 20px;
+    background: #F7F8FA;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase
+}
+
+.month-table .active {
+    background: black;
+    color: white
+}
+
+.month-table td:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    /* width:09px; */
+    padding: 10px 10px 10px 35px;
+    text-align: left;
+    background-color: #EEECE9;
+}
+
+.month-table td:nth-child(2) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 10px 10px;
+    background-color: #EEECE9;
+    text-align: right;
+}
+
+
+
+/* ITEM TITLE ROW */
+.item-title {
+    background: #BFBCBA;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.item-title td {
+    padding: 12px 2px;
+}
+
+.item-title a {
+    color: black;
+}
+
+/* MAIN TABLE */
+.main-table {
+    width: 100%;
+    padding: 0 12px;
+}
+
+.main-table tr {
+    padding: 10px 0 10px 35px;
+    text-align: center;
+    font-size: 14px;
+}
+
+td {
+    padding: 5px 2px;
+}
+
+.left-label {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 35px;
+    text-align: left;
+    line-height: 1.1;
+}
+
+.item-title td:first-child {
+    width: 170px;
+    /* Adjust this value as needed */
+    min-width: 80px;
+    /* Prevents the cell from shrinking too much */
+    padding: 12px 2px 12px 10px;
+    /* Reduced left padding from 35px to 10px */
+}
+
+.left-label a {
+    color: black;
+}
+
+.row-orange {
+    background: #FE936A;
+}
+
+.row-green {
+    background: #9FD47C;
+}
+
+.row-red {
+    background: #D85847;
+}
+
+.row-blue {
+    background: #6ECAF8;
+}
+
+.row-peach {
+    background: #FEC9B5;
+}
+
+.row-pink {
+    background: #FF9D9D;
+
+}
+
+.row-yellow {
+    background: #FFCE6A;
+}
+
+/* VALUE BOXES */
+.value-box {
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: lowercase;
+    padding: 9px 2px;
+    border-radius: 6px;
+}
+
+.size {
+    font-size: 10px;
+    padding: 4px 2px;
+}
+
+table tr:nth-child(1) td:last-child {
+    border-top-right-radius: 6px;
+}
+
+table tr:nth-child(1) td:nth-child(1) {
+    border-top-left-radius: 6px;
+}
+
+table tr:last-child th:nth-child(1) {
+    border-bottom-left-radius: 6px;
+}
+
+table tr:last-child d:last-child {
+    border-bottom-right-radius: 6px;
+}
+
+.bottom-text {
+    color: #4C4C4C;
+    font-weight: 300;
+    font-style: Italic;
+    font-size: 14px;
+    margin: 12px 0;
+
+}
+
+
+/* Dialog Styles */
+.dialog-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-panel {
+    width: 568px;
+    border-radius: 24px;
+    background: white;
+    overflow: hidden;
+}
+
+.dialog-header {
+    /* background: #BFBCBA; */
+    display: flex;
+    justify-content: space-between;
+    padding :28px 28px 10px 28px;;
+    font-weight: 700;
+    font-size: 20px;
+    color: #716F70;
+    margin: 0;
+    border-bottom: 1px solid #E9E9E9
+}
+
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 28px ;
+}
+
+.search-wrapper label {
+    margin-bottom: 4px;
+font-weight: 400;
+font-size: 16px;
+
+}
+
+#searchField {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #EBEBEB;
+    border-radius: 8px;
+    font-size: 14px;
+
+}
+
+#searchField::placeholder {
+    font-style: italic;
+    font-size: 14px;
+    color:#000000;
+}
+
+.items-container {
+    margin-top: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+     border: 1px solid #EBEBEB;
+     border-radius: 8px;
+
+}
+
+.item-option {
+    padding: 8px 20px;
+    cursor: pointer;
+    /* border-bottom: 1px solid #f0f0f0; */
+    transition: background-color 0.2s;
+}
+
+.item-option:hover {
+    background-color: #f8f8f8;
+}
+
+.item-option.active {
+    background-color: #17B7FF;
+    color:black;
+}
+
+.dialog-footer {
+    padding: 28px 28px ;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.action-btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size:14px;
+}
+
+.btn-secondary {
+    background-color: #F4F4F4;
+    color: #838383;
+    font-weight: 400;
+}
+
+.btn-primary {
+    background-color: #17B7FF;
+    color: white;
+}

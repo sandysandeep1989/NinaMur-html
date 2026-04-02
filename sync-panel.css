@@ -1,0 +1,375 @@
+/* ============================================================
+   SYNC PANEL — Page-specific styles
+   Scoped with .sp- prefix to avoid conflicts
+   ============================================================ */
+
+/* ---- Container ---- */
+.sp-container {
+    background-color: #F7F8FA;
+    padding: 20px 24px 24px 24px;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sp-container h2 {
+    font-weight: 500;
+    font-size: 24px;
+    margin: 0;
+    color: #000000;
+}
+
+/* Back link — Figma: italic, underlined, 12px */
+.sp-back-link {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ---- White Card Wrapper ---- */
+.sp-card {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ---- Section Header (General Info / Products / Customers) ---- */
+.sp-section-header {
+    border-bottom: 1px solid #716F70;
+    padding-bottom: 8px;
+}
+
+.sp-section-header h3 {
+    font-weight: 600;
+    font-size: 19px;
+    color: #716F70;
+    margin: 0;
+}
+
+/* ---- Form Row (4-col grid) ---- */
+.sp-form-row {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.sp-form-group {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+}
+
+.sp-form-group-fixed {
+    flex: 0 0 450px;
+    max-width: 100%;
+}
+
+.sp-form-group label {
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+}
+
+/* ---- Input with icon ---- */
+.sp-input-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.sp-input-wrap input {
+    width: 100%;
+    border: 1px solid #EBEBEB;
+    border-radius: 8px;
+    padding: 0 16px;
+    height: 38px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    outline: none;
+    background: #FFFFFF;
+}
+
+.sp-input-wrap input::placeholder {
+    color: #000000;
+}
+
+/* ---- Bottom Row (Timeout + Buttons) ---- */
+.sp-form-row-bottom {
+    align-items: flex-end;
+}
+
+.sp-btn-primary {
+    width: 270px;
+    height: 38px;
+    background: #17B7FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.sp-btn-primary:hover {
+    background: #0ea5e9;
+}
+
+/* ============================================================
+   SYNC CARDS GRID
+   ============================================================ */
+
+.sp-sync-row {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+/* Individual Sync Card */
+.sp-sync-card {
+    flex: 1 1 0;
+    min-width: 0;
+    background: #FFFFFF;
+    border: 1px solid #EBEBEB;
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    overflow: hidden;
+}
+
+/* Multi-item card (Temple Extra + Tips + Lenses) */
+.sp-sync-card-multi {
+    justify-content: space-between;
+    gap: 0;
+}
+
+.sp-sync-card-multi .sp-sync-card-header {
+    padding: 8px 0;
+}
+
+.sp-sync-card-multi .sp-sync-card-header:first-child {
+    padding-top: 0;
+}
+
+.sp-sync-card-multi .sp-sync-card-header:last-child {
+    padding-bottom: 0;
+}
+
+/* Card Header (Title + Sync button) */
+.sp-sync-card-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+}
+
+.sp-sync-card-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Sync Button */
+.sp-btn-sync {
+    background: #17B7FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    height: 38px;
+    padding: 0 40px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.sp-btn-sync:hover {
+    background: #0ea5e9;
+}
+
+/* Wide sync button for Customers & Orders section */
+.sp-btn-sync-wide {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Batch Limit row */
+.sp-sync-card-batch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sp-batch-label {
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+    white-space: nowrap;
+}
+
+.sp-batch-input {
+    width: 80px;
+    height: 33px;
+    border: 1px solid #EBEBEB;
+    border-radius: 8px;
+    padding: 8px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #000000;
+    text-align: center;
+    outline: none;
+}
+
+/* Reset Button */
+.sp-btn-reset {
+    background: #F4F4F4;
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    height: 32px;
+    padding: 0 12px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+    align-self: flex-start;
+}
+
+.sp-btn-reset:hover {
+    background: #e8e8e8;
+}
+
+/* ---- Customers & Orders: 3-col with fixed widths ---- */
+.sp-sync-row-orders {
+    flex-wrap: nowrap;
+}
+
+.sp-sync-card-wide {
+    flex: 1 1 0;
+}
+
+/* ============================================================
+   RESPONSIVE — matching existing breakpoints
+   ============================================================ */
+
+@media (max-width: 1700px) {
+    .sp-form-group-fixed {
+        flex: 0 0 350px;
+    }
+
+    .sp-btn-primary {
+        width: 220px;
+        font-size: 14px;
+    }
+
+    .sp-sync-card-title {
+        font-size: 14px;
+    }
+
+    .sp-btn-sync {
+        padding: 0 24px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1500px) {
+    .sp-form-row {
+        flex-wrap: wrap;
+    }
+
+    .sp-form-group {
+        flex: 1 1 calc(50% - 6px);
+        min-width: 200px;
+    }
+
+    .sp-form-group-fixed {
+        flex: 0 0 calc(50% - 6px);
+    }
+
+    .sp-sync-row {
+        flex-wrap: wrap;
+    }
+
+    .sp-sync-card {
+        flex: 1 1 calc(50% - 8px);
+        min-width: 280px;
+    }
+
+    .sp-sync-row-orders .sp-sync-card-wide {
+        flex: 1 1 calc(50% - 8px);
+        min-width: 280px;
+    }
+
+    .sp-btn-primary {
+        width: 200px;
+        font-size: 13px;
+    }
+
+    .sp-section-header h3 {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .sp-container {
+        padding: 16px 16px;
+    }
+
+    .sp-form-group {
+        flex: 1 1 100%;
+    }
+
+    .sp-form-group-fixed {
+        flex: 1 1 100%;
+    }
+
+    .sp-form-row-bottom {
+        flex-wrap: wrap;
+    }
+
+    .sp-btn-primary {
+        width: 100%;
+        max-width: 270px;
+    }
+
+    .sp-sync-card {
+        flex: 1 1 100%;
+    }
+
+    .sp-sync-row-orders .sp-sync-card-wide {
+        flex: 1 1 100%;
+    }
+
+    .sp-card {
+        border-radius: 16px;
+        padding: 12px;
+    }
+
+    .sp-section-header h3 {
+        font-size: 16px;
+    }
+
+    .sp-form-group label {
+        font-size: 14px;
+    }
+}
