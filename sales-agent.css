@@ -1,0 +1,245 @@
+/* =============================================
+   Sales Agent Page Styles (sa- prefix)
+   ============================================= */
+
+.sa-container {
+    padding: 24px 30px;
+    min-height: calc(100vh - 367px);
+    background: #F7F8FA;
+}
+
+/* --- Title Row --- */
+.sa-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.sa-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+}
+
+.sa-results {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+
+/* --- Action Bar --- */
+.sa-action-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+
+.sa-action-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.sa-action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: #17B7FF;
+    color: #fff;
+    transition: opacity 0.15s;
+}
+
+.sa-action-btn:hover {
+    opacity: 0.85;
+}
+
+/* --- Table Wrapper --- */
+.sa-table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+.sa-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    font-size: 12px;
+    table-layout: fixed;
+    min-width: 1480px;
+}
+
+/* Column widths */
+.sa-col-id { width: 80px; }
+.sa-col-name { width: 220px; }
+.sa-col-since { width: 140px; }
+.sa-col-commission { width: 180px; }
+.sa-col-area { width: 340px; }
+.sa-col-email { width: 340px; }
+.sa-col-sample { width: 120px; }
+.sa-col-actions { width: 142px; }
+
+/* --- Table Header --- */
+.sa-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #fff;
+}
+
+.sa-table thead th {
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000;
+    white-space: nowrap;
+  
+    text-align: left;
+    vertical-align: middle;
+}
+
+.sa-table thead th.sa-th-center {
+    text-align: center;
+}
+
+/* Sortable header */
+.sa-th-sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.sa-th-sortable .sa-sort-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 2px;
+    opacity: 0.5;
+}
+
+.sa-th-sortable:hover .sa-sort-icon {
+    opacity: 1;
+}
+
+/* --- Table Body Rows --- */
+.sa-table tbody tr {
+    background: #fff;
+    border-radius: 6px;
+    transition: background 0.15s;
+}
+
+.sa-table tbody tr:hover {
+    background: #F5F5F5;
+}
+
+.sa-table tbody td {
+    padding: 10px 12px;
+    font-size: 12px;
+    color: #000;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* First cell rounded left, last cell rounded right */
+.sa-table tbody td:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.sa-table tbody td:last-child {
+    border-radius: 0 6px 6px 0;
+}
+
+.sa-table tbody td.sa-td-center {
+    text-align: center;
+}
+
+/* --- ID link --- */
+.sa-id-link {
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
+}
+
+.sa-id-link:hover {
+    color: #000;
+}
+
+/* --- Sample Set Icon --- */
+.sa-sample-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sa-sample-icon svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+/* --- Row Action Buttons --- */
+.sa-row-actions {
+    display: flex;
+    gap: 7.5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.sa-row-action-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 6px;
+    transition: opacity 0.15s;
+}
+
+.sa-row-action-btn:hover {
+    opacity: 0.7;
+}
+
+.sa-row-action-btn svg {
+    width: 12px;
+    height: 12px;
+    display: block;
+}
+
+.sa-row-action-btn--copy {
+    background: rgba(159, 101, 241, 0.08);
+}
+
+.sa-row-action-btn--folder {
+    background: rgba(76, 73, 255, 0.08);
+}
+
+.sa-row-action-btn--delete {
+    background: rgba(255, 73, 73, 0.08);
+}
+
+/* --- Inactive / Strikethrough Row --- */
+.sa-row-inactive td {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.sa-row-inactive .sa-id-link {
+    color: #999;
+    text-decoration: none;
+}
+
+/* .sa-row-inactive .sa-sample-icon svg {
+    opacity: 0.4;
+} */

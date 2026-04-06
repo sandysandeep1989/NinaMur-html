@@ -1,0 +1,494 @@
+/* =============================================
+   Agent Stats Page Styles (as- prefix)
+   ============================================= */
+
+.as-container {
+    padding: 24px 30px;
+    min-height: calc(100vh - 367px);
+    background: #F7F8FA;
+}
+
+/* --- Back Link & Title --- */
+.as-back-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 0;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #000;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.as-back-link:hover {
+    opacity: 0.7;
+}
+
+.as-back-link svg {
+    width: 10px;
+    height: 8px;
+}
+
+.as-agent-name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 14px;
+}
+
+/* --- Content Card --- */
+.as-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+/* --- Tab Bar --- */
+.as-tab-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.as-tabs {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.as-tab {
+    height: 36px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    background: #F4F4F4;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
+}
+
+.as-tab:hover {
+    background: #e8e8e8;
+}
+
+.as-tab.active {
+    background: #00BAFF;
+    color: #fff;
+}
+
+.as-tab.active:hover {
+    background: #17B7FF;
+}
+
+.as-export-btn {
+    height: 36px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    background: #0D0D0D;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+}
+
+.as-export-btn:hover {
+    opacity: 0.85;
+}
+
+.as-export-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* --- Tab Panels --- */
+.as-tab-panel {
+    display: none;
+}
+
+.as-tab-panel.active {
+    display: block;
+}
+
+/* =============================================
+   Grid Tables (Tabs 1-4, 6)
+   ============================================= */
+
+.as-grid-wrapper {
+    display: flex;
+    gap: 64px;
+    align-items: flex-start;
+    overflow-x: auto;
+}
+
+.as-grid-section {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* --- Grid Header --- */
+.as-grid-title {
+    background: #DADADA;
+    border-radius: 6px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #000;
+    margin-left: 132px;
+}
+
+.as-grid-title--wide {
+    margin-left: 332px;
+}
+
+.as-grid-title--no-margin {
+    margin-left: 0;
+}
+
+/* --- Year Headers --- */
+.as-year-row {
+    display: flex;
+    gap: 8px;
+    margin-left: 132px;
+}
+
+.as-year-row--wide {
+    margin-left: 332px;
+}
+
+.as-year-cell {
+    flex: 1;
+    height: 42px;
+    background: #EEECE9;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #000;
+}
+
+/* --- Sub-headers (TOTAL, TOTAL AG., etc.) --- */
+.as-subheader-row {
+    display: flex;
+    gap: 8px;
+    margin-left: 132px;
+}
+
+.as-subheader-row--wide {
+    margin-left: 332px;
+}
+
+.as-subheader-group {
+    flex: 1;
+    display: flex;
+    gap: 8px;
+}
+
+.as-subheader-cell {
+    flex: 1;
+    height: 42px;
+    background: #EEECE9;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000;
+}
+
+/* --- Month Rows --- */
+.as-month-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.as-month-label {
+    width: 120px;
+    min-width: 120px;
+    height: 42px;
+    background: #EEECE9;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.as-month-label--wide {
+    width: 320px;
+    min-width: 320px;
+    justify-content: flex-end;
+    padding-right: 12px;
+}
+
+.as-month-data {
+    flex: 1;
+    display: flex;
+    gap: 8px;
+}
+
+.as-data-group {
+    flex: 1;
+    display: flex;
+    gap: 8px;
+}
+
+.as-data-cell {
+    flex: 1;
+    height: 42px;
+    background: #F7F8FA;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.as-data-cell--bold {
+    font-weight: 700;
+}
+
+.as-data-cell--green {
+    color: #5B862E;
+    font-weight: 500;
+}
+
+.as-data-cell--red {
+    color: #FF2727;
+    font-weight: 400;
+}
+
+/* --- Rows Container --- */
+.as-rows-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* --- Grid Header + Body Layout --- */
+.as-grid-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 132px;
+}
+
+.as-grid-header--wide {
+    padding-left: 332px;
+}
+
+/* =============================================
+   Area/Customers Table (Tab 5)
+   ============================================= */
+
+.as-ac-wrapper {
+    overflow-x: auto;
+}
+
+.as-ac-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    font-size: 12px;
+    min-width: 1800px;
+}
+
+.as-ac-table thead th {
+    padding: 10px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: middle;
+    background: #F7F8FA;
+}
+
+.as-ac-table thead th:first-child {
+    border-radius: 6px 0 0 6px;
+}
+
+.as-ac-table thead th:last-child {
+    border-radius: 0 6px 6px 0;
+}
+
+.as-ac-table thead th.as-th-center {
+    text-align: center;
+}
+
+.as-ac-table thead th .as-sort-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 2px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.as-ac-table thead th:hover .as-sort-icon {
+    opacity: 1;
+}
+
+.as-ac-table tbody tr {
+    background: #F7F8FA;
+    border-radius: 6px;
+}
+
+.as-ac-table tbody td {
+    padding: 10px 12px;
+    font-size: 12px;
+    color: #000;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.as-ac-table tbody td:first-child {
+    border-radius: 6px 0 0 6px;
+    padding: 0;
+}
+
+.as-ac-table tbody td:last-child {
+    border-radius: 0 6px 6px 0;
+}
+
+.as-ac-table tbody td.as-td-center {
+    text-align: center;
+}
+
+/* Opening column color badges */
+.as-opening-badge {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+    white-space: nowrap;
+    height: 100%;
+    min-width: 214px;
+}
+
+.as-opening--before-all {
+    background: #FFAE94;
+    border-radius: 6px 0  0px 6px;
+}
+
+.as-opening--after-fair {
+    background: #FFDE81;
+    border-radius: 6px 0  0px 6px;
+
+}
+
+.as-opening--agent-quick {
+    background: #ADE899;
+    border-radius: 6px 0  0px 6px;
+
+}
+
+.as-opening--after-others {
+    background: #C8C8C8;
+    border-radius: 6px 0  0px 6px;
+
+}
+
+/* ID link in area table */
+.as-ac-id-link {
+    text-decoration: underline;
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* --- Legend --- */
+.as-legend {
+    margin-top: 24px;
+    display: flex;
+    gap: 120px;
+    font-size: 12px;
+    color: #000;
+    line-height: 1.8;
+}
+
+.as-legend-section p {
+    margin: 0;
+}
+
+.as-legend-section strong {
+    font-weight: 700;
+}
+
+/* =============================================
+   Stats Overview Section Dividers (Tab 6)
+   ============================================= */
+
+.as-section-divider {
+    border-bottom: 0.5px solid #000;
+    padding: 12px 0;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.as-section-divider-text {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+
+/* =============================================
+   Responsive / Overflow
+   ============================================= */
+
+.as-grid-wrapper::-webkit-scrollbar,
+.as-ac-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.as-grid-wrapper::-webkit-scrollbar-track,
+.as-ac-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.as-grid-wrapper::-webkit-scrollbar-thumb,
+.as-ac-wrapper::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
