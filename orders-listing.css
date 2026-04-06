@@ -4,8 +4,9 @@
 
 .ol-container {
     padding: 24px 30px;
+        min-height: calc(100vh - 367px);
     background: #F7F8FA;
-    min-height: calc(100vh - 90px);
+
 }
 
 /* --- Title Row --- */
@@ -102,37 +103,21 @@
     font-size: 18px;
 }
 
-.ol-action-btn--green {
-    background: #22C55E;
-}
-
-.ol-action-btn--blue {
-    background: #3B82F6;
-}
-
-.ol-action-btn--red {
-    background: #EF4444;
-}
-
-.ol-action-btn--sky {
-    background: #38BDF8;
-}
-
-.ol-action-btn--amber {
-    background: #F59E0B;
+.ol-action-btn--primary {
+    background: #17B7FF;
 }
 
 /* --- Table Wrapper --- */
 .ol-table-wrapper {
     overflow-x: auto;
-    background: #fff;
     border-radius: 12px;
-    border: 1px solid #EBEBEB;
+
 }
 
 .ol-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0 8px;
     font-size: 12px;
     table-layout: fixed;
     min-width: 1600px;
@@ -181,6 +166,14 @@
     opacity: 1;
 }
 
+/* Row action button icons */
+.ol-row-action-btn--delete img,
+.ol-row-action-btn--copy img {
+    width: 10px;
+    height: 10px;
+    display: block;
+}
+
 /* Vertical rotated headers */
 .ol-th-rotated {
     vertical-align: bottom;
@@ -201,6 +194,7 @@
     font-weight: 600;
     text-transform: uppercase;
     line-height: 1;
+    margin: 0 auto;
 }
 
 /* Column widths */
@@ -229,17 +223,30 @@
 
 /* --- Table Body Rows --- */
 .ol-table tbody tr {
-    border-bottom: 1px solid #EBEBEB;
-    background: #F0F0F0;
+    background: #fff;
     transition: background 0.15s;
 }
 
 .ol-table tbody tr:hover {
-    background: #E8E8E8;
+    background: #F5F5F5;
 }
 
-.ol-table tbody tr.ol-row-highlight {
+/* --- Column highlight (customer cell) --- */
+.ol-table tbody td.ol-td-customer--orange {
     background: #FED068;
+}
+
+.ol-table tbody td.ol-td-customer--blue {
+    background: #4CCAFF;
+}
+
+/* --- Proforma Sent column colors --- */
+.ol-table tbody td.ol-td-proforma--green {
+    background: #B7DBA4;
+}
+
+.ol-table tbody td.ol-td-proforma--red {
+    background: #F69D9A;
 }
 
 .ol-table tbody td {
@@ -278,6 +285,7 @@
     height: 18px;
     flex-shrink: 0;
     cursor: pointer;
+    display: block;
 }
 
 /* --- Status Dropdown (inline) --- */
@@ -304,12 +312,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .ol-icon-cell img,
 .ol-icon-cell svg {
     width: 16px;
     height: 16px;
+    display: block;
 }
 
 /* --- Max Ship / Est Del cell --- */
@@ -342,35 +353,29 @@
     padding: 0 3px;
 }
 
-/* --- Checkbox-like indicator cells --- */
-.ol-check-cell {
-    width: 38px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.ol-check-cell--green {
-    background: #B7DBA4;
-}
-
-.ol-check-cell--red {
-    background: #F8B4B4;
-}
-
-.ol-check-cell--blue {
-    background: #93C5FD;
-}
-
-.ol-check-cell--empty {
-    background: transparent;
-}
-
-/* Checkmark icon inside cell */
-.ol-checkmark {
+/* --- Checkbox cells --- */
+.ol-checkbox {
     width: 14px;
     height: 14px;
+    margin: 0 auto;
+    cursor: pointer;
+    accent-color: #17B7FF;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1.5px solid #C3C3C3;
+    border-radius: 4px;
+    background: #fff;
+    display: block;
+    position: relative;
+}
+
+.ol-checkbox:checked {
+    background: #17B7FF;
+    border-color: #17B7FF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='none'%3E%3Cpath d='M8.02 2.69a.5.5 0 01.09.7L4.68 7.96a.5.5 0 01-.76.03L2.06 6.02a.5.5 0 01.73-.68L4.24 6.9l3.08-4.12a.5.5 0 01.7-.09z' fill='%23fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px 10px;
 }
 
 /* --- Tracking link --- */
@@ -389,13 +394,14 @@
 
 .ol-mini-select {
     height: 20px;
-    padding: 0 16px 0 4px;
-    border: 0.5px solid #EBEBEB;
+    padding: 0 16px 0 0;
+    border: none;
     border-radius: 3px;
-    background: #fff;
+    background: transparent;
     font-size: 10px;
     font-family: "IBM Plex Sans", sans-serif;
     color: #000;
+    font-weight: 600;
     text-transform: uppercase;
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' fill='none'%3E%3Cpath d='M1 1l3 3 3-3' stroke='%23000' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -405,9 +411,18 @@
     width: 100%;
 }
 
+.ol-seller-cell .ol-mini-select:last-child {
+    color: #999;
+    font-weight: 400;
+    font-style: italic;
+    text-transform: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' fill='none'%3E%3Cpath d='M1 1l3 3 3-3' stroke='%23999' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
 /* --- Source mini-dropdown --- */
 .ol-source-select {
-    height: 20px;
+    height: 24px;
+    width: 60px;
     padding: 0 16px 0 4px;
     border: none;
     border-radius: 2px;
@@ -450,12 +465,6 @@
     background: rgba(159, 101, 241, 0.08);
 }
 
-.ol-row-action-btn--delete svg,
-.ol-row-action-btn--copy svg {
-    width: 10px;
-    height: 10px;
-}
-
 /* --- Menu icon (hamburger) --- */
 .ol-menu-btn {
     background: none;
@@ -487,7 +496,7 @@
     top: 100%;
     right: 0;
     z-index: 20;
-    min-width: 160px;
+    min-width: 120px;
     background: #fff;
     border: 1px solid #E2E8F0;
     border-radius: 8px;
@@ -504,7 +513,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 8px 6px 32px;
+    padding: 6px 8px 6px 8px;
     font-size: 14px;
     color: #020617;
     cursor: pointer;
@@ -515,6 +524,7 @@
     text-align: left;
     font-family: "IBM Plex Sans", sans-serif;
     position: relative;
+    justify-content: flex-start;
 }
 
 .ol-popover-item:hover {
@@ -522,10 +532,183 @@
 }
 
 .ol-popover-item .ol-popover-check {
-    position: absolute;
-    left: 8px;
     width: 16px;
     height: 16px;
+}
+
+/* ============================
+   Order Items Modal
+   ============================ */
+.oi-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
+}
+
+.oi-overlay.oi-overlay--open {
+    display: flex;
+}
+
+.oi-modal {
+    background: #fff;
+    border-radius: 24px;
+    padding: 24px;
+    width: 90%;
+    max-width: 1125px;
+    max-height: 85vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+.oi-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.oi-title {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #716F70;
+    margin: 0;
+}
+
+.oi-close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 90px;
+    border: none;
+    background: #00BAFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.oi-close-btn:hover {
+    background: #00a8e6;
+}
+
+.oi-table-wrap {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: calc(85vh - 100px);
+}
+
+.oi-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.oi-table thead tr {
+    background: #EEECE9;
+}
+
+.oi-table thead th {
+    padding: 10px 8px;
+    font-size: 11px;
+    font-weight: 400;
+    color: #000;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.oi-table thead th:first-child {
+    border-radius: 6px 0 0 6px;
+    padding-left: 12px;
+}
+
+.oi-table thead th:last-child {
+    border-radius: 0 6px 6px 0;
+}
+
+.oi-table thead th .ol-sort-icon {
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+.oi-table tbody tr:nth-child(odd) {
+    background: #FAFAFA;
+}
+
+.oi-table tbody tr:nth-child(even) {
+    background: #F2F2F2;
+}
+
+.oi-table tbody tr td {
+    padding: 2px 8px;
+    font-size: 12px;
+    color: #000;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.oi-table tbody tr td:first-child {
+    border-radius: 10px 0 0 10px;
+    padding-left: 12px;
+}
+
+.oi-table tbody tr td:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.oi-id-link {
+    text-decoration: underline;
+    color: #000;
+    font-size: 12px;
+}
+
+.oi-product-name {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.025px;
+    white-space: normal;
+    max-width: 150px;
+    line-height: 1.3;
+}
+
+.oi-center {
+    text-align: center;
+}
+
+.oi-preview-img {
+    height: 36px;
+    width: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.oi-chevron {
+    vertical-align: middle;
+    margin-left: 12px;
+}
+
+.oi-pack-select {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12px;
+    color: #000;
+    border: none;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 4px 16px 4px 0;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='5' fill='none'%3E%3Cpath d='M1 1l4 3 4-3' stroke='%23000' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0 center;
 }
 
 /* --- Responsive --- */

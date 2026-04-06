@@ -1,0 +1,729 @@
+/* =============================================
+   Sales Report / Order & Eyewear Analysis (sr- prefix)
+   ============================================= */
+
+.sr-container {
+    padding: 20px 24px;
+    min-height: calc(100vh - 367px);
+    background: #F7F8FA;
+}
+
+/* --- Title Row --- */
+.sr-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.sr-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+    margin: 0;
+}
+
+.sr-results {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* --- Button Row (New Search + Action Circles) --- */
+.sr-btn-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 14px;
+}
+
+.sr-new-search-btn {
+    background: #00BAFF;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'IBM Plex Sans', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.sr-new-search-btn:hover {
+    background: #00a8e6;
+}
+
+.sr-action-buttons {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+}
+
+.sr-action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+}
+
+.sr-action-btn--primary {
+    background: #17B7FF;
+}
+
+.sr-action-btn--primary:hover {
+    background: #0ea8ec;
+}
+
+/* --- Table Wrapper --- */
+.sr-table-wrapper {
+    overflow-x: auto;
+}
+
+.sr-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    font-size: 10px;
+    table-layout: fixed;
+    min-width: 1872px;
+}
+
+/* --- Column Widths --- */
+.sr-col-history     { width: 84px; }
+.sr-col-reporttype  { width: 84px; }
+.sr-col-when        { width: 80px; }
+.sr-col-ordercat    { width: 140px; }
+.sr-col-who         { width: 120px; }
+.sr-col-category    { width: 150px; }
+.sr-col-rating      { width: 55px; }
+.sr-col-loyalty     { width: 100px; }
+.sr-col-were        { width: 60px; }
+.sr-col-source      { width: 240px; }
+.sr-col-eyewear     { width: 240px; }
+.sr-col-searchdesc  { width: 127px; }
+.sr-col-actions     { width: 120px; }
+.sr-col-reportgen   { width: 180px; }
+
+/* --- Header Row --- */
+.sr-table thead tr {
+    background: #fff;
+    border-radius: 6px;
+}
+
+.sr-table thead th {
+    padding: 10px 4px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #000;
+    text-transform: uppercase;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: none;
+    background: #fff;
+}
+
+.sr-table thead th:first-child {
+    border-radius: 6px 0 0 6px;
+    padding-left: 8px;
+}
+
+.sr-table thead th:last-child {
+    border-radius: 0 6px 6px 0;
+    padding-right: 8px;
+}
+
+.sr-th-inner {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.sr-th-inner--center {
+    justify-content: center;
+}
+
+.sr-th-sort {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+/* --- Data Rows --- */
+.sr-table tbody tr {
+    background: #fff;
+    border-radius: 6px;
+}
+
+.sr-table tbody td {
+    padding: 10px 4px;
+    font-size: 10px;
+    font-weight: 400;
+    color: #000;
+    vertical-align: top;
+    border: none;
+    background: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.sr-table tbody td:first-child {
+    border-radius: 6px 0 0 6px;
+    padding-left: 8px;
+}
+
+.sr-table tbody td:last-child {
+    border-radius: 0 6px 6px 0;
+    padding-right: 8px;
+}
+
+.sr-td-center {
+    text-align: center;
+}
+
+.sr-td-capitalize {
+    text-transform: capitalize;
+}
+
+/* --- Actions Column (delete + folder icons) --- */
+.sr-row-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.sr-row-action-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.sr-row-action-btn--delete {
+    background: rgba(255, 73, 73, 0.08);
+}
+
+.sr-row-action-btn--delete:hover {
+    background: rgba(255, 73, 73, 0.18);
+}
+
+.sr-row-action-btn--folder {
+    background: rgba(76, 73, 255, 0.08);
+}
+
+.sr-row-action-btn--folder:hover {
+    background: rgba(76, 73, 255, 0.18);
+}
+
+.sr-row-action-btn svg {
+    width: 12px;
+    height: 12px;
+}
+
+/* --- Report Generation Column (Open PDF / Open XLSX) --- */
+.sr-report-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: stretch;
+}
+
+.sr-report-btn {
+    flex: 1 1 50%;
+    max-width: calc(50% - 4px);
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 500;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #333;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    line-height: 14px;
+}
+
+.sr-report-btn:hover {
+    background: #f5f5f5;
+}
+
+@media (max-width: 1800px) {
+    .sr-report-btns {
+        flex-direction: column;
+    }
+    .sr-report-btn {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* =============================================
+   Advanced Search & Filter Popup
+   ============================================= */
+
+/* Overlay */
+.sr-popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1050;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.sr-popup-overlay.sr-popup--open {
+    display: flex;
+}
+
+/* Popup Container */
+.sr-popup {
+    background: #fff;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 1040px;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.sr-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px 16px;
+    border-bottom: 1px solid #EBEBEB;
+}
+
+.sr-popup-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.sr-popup-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: #00BAFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.sr-popup-close:hover {
+    background: #00a8e6;
+}
+
+/* Body */
+.sr-popup-body {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Section label */
+.sr-popup-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 10px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.sr-popup-sublabel {
+    font-size: 11px;
+    font-weight: 500;
+    color: #838383;
+    margin-bottom: 6px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* --- Rows --- */
+.sr-popup-row {
+    display: flex;
+    gap: 24px;
+}
+
+.sr-popup-row--top {
+    align-items: flex-start;
+}
+
+.sr-popup-row--mid {
+    align-items: flex-start;
+}
+
+.sr-popup-row--bottom {
+    align-items: flex-start;
+}
+
+.sr-popup-section {
+    flex: 1;
+    min-width: 0;
+}
+
+.sr-popup-section--when {
+    flex: 1.2;
+}
+
+.sr-popup-section--ordercat {
+    flex: 1.6;
+}
+
+.sr-popup-section--who {
+    flex: 1;
+}
+
+.sr-popup-section--where {
+    flex: 1.3;
+}
+
+.sr-popup-section--type {
+    width: 100%;
+}
+
+/* --- Toggle Group (Date Range / Specific Fair) --- */
+.sr-popup-toggle-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.sr-popup-toggle {
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'IBM Plex Sans', sans-serif;
+    cursor: pointer;
+    background: #F4F4F4;
+    color: #838383;
+    transition: background 0.15s, color 0.15s;
+}
+
+.sr-popup-toggle--active {
+    background: #17B7FF;
+    color: #fff;
+}
+
+/* --- Date Inputs --- */
+.sr-popup-date-row {
+    display: flex;
+    gap: 12px;
+}
+
+.sr-popup-date-field {
+    flex: 1;
+}
+
+.sr-popup-date-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: #838383;
+    margin-bottom: 4px;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.sr-popup-date-input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #EBEBEB;
+    border-radius: 8px;
+    font-size: 12px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #000;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.sr-popup-date-input::placeholder {
+    color: #ABABAB;
+}
+
+.sr-popup-date-input:focus {
+    border-color: #17B7FF;
+}
+
+/* Fair field (Specific Fair tab) */
+.sr-popup-fair-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* --- Checkbox (20px default / 16px small) --- */
+.sr-popup-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+    cursor: pointer;
+    font-family: 'IBM Plex Sans', sans-serif;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.sr-popup-check input[type="checkbox"] {
+    display: none;
+}
+
+.sr-popup-checkmark {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #D1D5DC;
+    border-radius: 4px;
+    flex-shrink: 0;
+    position: relative;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.sr-popup-checkmark--sm {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+}
+
+.sr-popup-check input[type="checkbox"]:checked + .sr-popup-checkmark {
+    background: #17B7FF;
+    border-color: #17B7FF;
+}
+
+.sr-popup-check input[type="checkbox"]:checked + .sr-popup-checkmark::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 9px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -60%) rotate(45deg);
+}
+
+.sr-popup-check input[type="checkbox"]:checked + .sr-popup-checkmark--sm::after {
+    width: 4px;
+    height: 7px;
+    border-width: 0 1.5px 1.5px 0;
+}
+
+.sr-popup-check--sm {
+    font-size: 11px;
+}
+
+/* Checkbox grid (Order Category: 2 cols) */
+.sr-popup-checks-grid--ordercat {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+}
+
+/* Checkbox row (horizontal) */
+.sr-popup-checks-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Checkbox column (vertical list) */
+.sr-popup-checks-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* --- Radio Buttons (Who) --- */
+.sr-popup-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sr-popup-radio {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+    cursor: pointer;
+    font-family: 'IBM Plex Sans', sans-serif;
+    user-select: none;
+}
+
+.sr-popup-radio input[type="radio"] {
+    display: none;
+}
+
+.sr-popup-radio-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1.5px solid #D1D5DC;
+    flex-shrink: 0;
+    position: relative;
+    transition: border-color 0.15s;
+}
+
+.sr-popup-radio input[type="radio"]:checked + .sr-popup-radio-dot {
+    border-color: #17B7FF;
+}
+
+.sr-popup-radio input[type="radio"]:checked + .sr-popup-radio-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #17B7FF;
+    transform: translate(-50%, -50%);
+}
+
+/* --- Where row item --- */
+.sr-popup-where-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sr-popup-where-count {
+    font-size: 11px;
+    color: #17B7FF;
+    font-weight: 500;
+}
+
+.sr-popup-where-select {
+    font-size: 11px;
+    color: #17B7FF;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: auto;
+}
+
+.sr-popup-where-select:hover {
+    text-decoration: underline;
+}
+
+/* --- How / What grids --- */
+.sr-popup-how-grid,
+.sr-popup-what-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* --- Select dropdown --- */
+.sr-popup-select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #EBEBEB;
+    border-radius: 8px;
+    font-size: 12px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #000;
+    outline: none;
+    background: #fff;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23838383' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 28px;
+    box-sizing: border-box;
+}
+
+.sr-popup-select:focus {
+    border-color: #17B7FF;
+}
+
+/* --- Textarea --- */
+.sr-popup-textarea {
+    width: 100%;
+    height: 132px;
+    padding: 10px 12px;
+    border: 1px solid #EBEBEB;
+    border-radius: 8px;
+    font-size: 12px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #000;
+    outline: none;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.sr-popup-textarea::placeholder {
+    color: #ABABAB;
+}
+
+.sr-popup-textarea:focus {
+    border-color: #17B7FF;
+}
+
+/* --- Footer --- */
+.sr-popup-footer {
+    display: flex;
+    gap: 12px;
+    padding: 16px 24px 24px;
+    border-top: 1px solid #EBEBEB;
+}
+
+.sr-popup-footer-btn {
+    flex: 1 1 33.33%;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'IBM Plex Sans', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.sr-popup-footer-btn--outline {
+    background: #fff;
+    border: 1px solid #D1D5DC;
+    color: #000;
+}
+
+.sr-popup-footer-btn--outline:hover {
+    background: #F4F4F4;
+}
+
+.sr-popup-footer-btn--primary {
+    background: #17B7FF;
+    border: none;
+    color: #fff;
+}
+
+.sr-popup-footer-btn--primary:hover {
+    background: #0ea8ec;
+}

@@ -1,0 +1,660 @@
+/* =============================================
+   Order Payments Page Styles (op- prefix)
+   ============================================= */
+
+.op-container {
+    padding: 24px 30px;
+    min-height: calc(100vh - 90px);
+    background: #F7F8FA;
+}
+
+/* --- Title Row --- */
+.op-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.op-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+}
+
+.op-results {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+
+/* --- Filter Cards (Order Type + Payment Method) --- */
+.op-filter-cards-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.op-filter-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.op-filter-card-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    margin: 0;
+}
+
+.op-filter-card-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 32px;
+}
+
+.op-filter-card--prodstatus .op-filter-card-options {
+    gap: 12px 48px;
+}
+
+.op-filter-card--prodstatus .op-filter-option {
+    width: 148px;
+}
+
+.op-filter-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.op-filter-option img {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.op-filter-option span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    white-space: nowrap;
+}
+
+/* --- Filter Bar (dropdowns row) --- */
+.op-filter-bar {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.op-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.op-filter-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+}
+
+.op-filter-select {
+    height: 34px;
+    width: 200px;
+    padding: 0 32px 0 12px;
+    border: 1px solid #E3E3E3;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 13px;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #000;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    cursor: pointer;
+}
+
+.op-filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    height: 34px;
+}
+
+.op-filter-toggle img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.op-filter-toggle span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    white-space: nowrap;
+}
+
+.op-clear-filter {
+    font-size: 12px;
+    font-weight: 400;
+    color: #666;
+    background: none;
+    border: 1px solid #EFEFEF;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 0 12px;
+    height: 34px;
+    line-height: 34px;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.op-clear-filter:hover {
+    background: #f5f5f5;
+}
+
+.op-apply-filter {
+    height: 36px;
+    width: 160px;
+    border: none;
+    border-radius: 8px;
+    background: #00BAFF;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "IBM Plex Sans", sans-serif;
+    cursor: pointer;
+}
+
+.op-apply-filter:hover {
+    background: #00a8e6;
+}
+
+.op-filter-note {
+    font-size: 12px;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.6);
+    margin:-10px 0 0 0;
+    flex-basis: 100%;
+}
+
+/* --- Action Buttons (top-right circles) --- */
+.op-action-buttons {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+    align-items: center;
+}
+
+.op-action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+}
+
+.op-action-btn--primary {
+    background: #17B7FF;
+}
+
+.op-action-btn--primary:hover {
+    background: #0ea8ec;
+}
+
+/* --- Table Wrapper --- */
+.op-table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+.op-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    font-size: 12px;
+    table-layout: fixed;
+    min-width: 1750px;
+}
+
+/* --- Column Widths --- */
+.op-col-id { width: 39px; }
+.op-col-customer { width: 160px; }
+.op-col-status { width: 130px; }
+.op-col-invoice { width: 40px; }
+.op-col-orderdate { width: 90px; }
+.op-col-lastpr { width: 90px; }
+.op-col-ordernotes { width: 32px; }
+.op-col-custnotes { width: 32px; }
+.op-col-paymethod { width: 116px; }
+.op-col-paypercent { width: 48px; }
+.op-col-total { width: 48px; }
+.op-col-pending { width: 48px; }
+.op-col-est1st { width: 90px; }
+.op-col-1stconf { width: 75px; }
+.op-col-1stsub { width: 93px; }
+.op-col-1stsepa { width: 40px; }
+.op-col-est2nd { width: 90px; }
+.op-col-2ndconf { width: 75px; }
+.op-col-2ndsub { width: 89px; }
+.op-col-2ndsepa { width: 40px; }
+.op-col-totpend { width: 112px; }
+.op-col-totpendsel { width: 112px; }
+.op-col-ordersel { width: 46px; }
+
+/* --- Table Header --- */
+.op-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #fff;
+}
+
+.op-table thead th {
+    padding: 10px 8px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000;
+    white-space: nowrap;
+    border-bottom: 1px solid #EBEBEB;
+    text-align: left;
+    vertical-align: bottom;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.op-table thead th.op-th-center {
+    text-align: center;
+}
+
+/* Sortable header */
+.op-th-sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.op-th-sortable .op-sort-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 2px;
+    opacity: 0.5;
+}
+
+.op-th-sortable:hover .op-sort-icon {
+    opacity: 1;
+}
+
+/* Vertical rotated headers */
+.op-th-rotated {
+    vertical-align: bottom;
+    text-align: center;
+    width: 40px;
+    min-width: 32px;
+    height: 120px;
+    position: relative;
+}
+
+.op-th-rotated .op-th-rotated-text {
+    display: block;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0 auto;
+}
+
+/* Multi-line header */
+.op-th-multiline {
+    white-space: normal !important;
+    line-height: 1.3;
+}
+
+/* --- Table Body Rows --- */
+.op-table tbody tr {
+    background: #fff;
+    transition: background 0.15s;
+}
+
+.op-table tbody tr:hover {
+    background: #F5F5F5;
+}
+
+.op-table tbody td {
+    padding: 6px 8px;
+    font-size: 12px;
+    color: #000;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.op-table tbody td.op-td-center {
+    text-align: center;
+}
+
+/* --- Sticky First 3 Columns --- */
+.op-table thead th:nth-child(1),
+.op-table tbody td:nth-child(1) {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: #fff;
+}
+
+.op-table thead th:nth-child(2),
+.op-table tbody td:nth-child(2) {
+    position: sticky;
+    left: 39px;
+    z-index: 2;
+}
+
+.op-table thead th:nth-child(3),
+.op-table tbody td:nth-child(3) {
+    position: sticky;
+    left: 199px;
+    z-index: 2;
+}
+
+/* Header sticky cells get higher z-index */
+.op-table thead th:nth-child(1),
+.op-table thead th:nth-child(2),
+.op-table thead th:nth-child(3) {
+    z-index: 6;
+    background: #fff;
+}
+
+/* Ensure sticky body cells have background to cover scrolling content */
+.op-table tbody td:nth-child(1) {
+    background: #fff;
+}
+
+.op-table tbody tr:hover td:nth-child(1) {
+    background: #F5F5F5;
+}
+
+/* Customer sticky column — bg set per cell via class */
+.op-table tbody td:nth-child(2) {
+    background: #fff;
+    border-right: 4px solid #fff;
+}
+
+/* Status sticky column — bg set per cell via inline style */
+.op-table tbody td:nth-child(3) {
+    background: #fff;
+    border-left: 4px solid #fff;
+}
+
+.op-table tbody tr:hover td:nth-child(3) {
+    background: #F5F5F5;
+}
+
+/* Shadow on last sticky column for visual separation */
+.op-table thead th:nth-child(3),
+.op-table tbody td:nth-child(3) {
+
+}
+
+/* --- ID link --- */
+.op-id-link {
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* --- Customer Cell --- */
+.op-customer-cell {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 0 8px;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.op-td-customer--orange {
+    background: #FED068 !important;
+}
+
+.op-td-customer--blue {
+    background: #4CCAFF !important;
+}
+
+/* --- Status Select (inline) --- */
+.op-status-select {
+    height: 28px;
+    padding: 0 20px 0 6px;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    font-size: 12px;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #000;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23000' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Status background colors */
+.op-td-status--boxed { background: #6187C9 !important; }
+.op-td-status--ready { background: #99D36C !important; }
+.op-td-status--shipped { background: #78909C !important; }
+.op-td-status--approved { background: #81C784 !important; }
+.op-td-status--confirmed { background: #4DB6AC !important; }
+.op-td-status--cutting { background: #7986CB !important; }
+.op-td-status--assembly { background: #FFF91E !important; }
+.op-td-status--lenses { background: #4FC3F7 !important; }
+.op-td-status--review { background: #E8D44D !important; }
+.op-td-status--reviewed { background: #A3D977 !important; }
+.op-td-status--standby { background: #FFB74D !important; }
+.op-td-status--modified { background: #FF8A65 !important; }
+.op-td-status--preassembly { background: #F6B000 !important; }
+.op-td-status--partlyshipped { background: #FFD54F !important; }
+
+/* --- Order Date / Max Shipping cell --- */
+.op-date-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 1.3;
+}
+
+.op-date-bold {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+}
+
+.op-date-italic {
+    font-size: 10px;
+    font-style: italic;
+    color: #000;
+}
+
+.op-date-italic--green {
+    color: #1D9010;
+}
+
+.op-date-italic--red {
+    color: #F30000;
+}
+
+/* --- Icon cells (notes, warnings) --- */
+.op-icon-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.op-icon-cell img {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+/* --- Est. Payment date dropdown --- */
+.op-date-select {
+    height: 28px;
+    padding: 0 20px 0 6px;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    font-size: 11px;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #000;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23000' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: none;
+    outline: none;
+}
+
+/* --- Payment Confirmed cell (Drop File) --- */
+.op-confirmed--red {
+    background: #FF9F9C !important;
+}
+
+.op-confirmed--green {
+    background: #B7DBA4 !important;
+}
+
+.op-dropfile {
+    display: block;
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 9px;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #999;
+    background: rgba(255, 255, 255, 0.75);
+    border: 0.5px dashed #EBEBEB;
+    border-radius: 3px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.op-dropfile-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* --- Checkbox icon (SEPA Programmed, Order Selection) --- */
+.op-checkbox-icon {
+    width: 14px;
+    height: 14px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+/* --- Currency cells --- */
+.op-currency {
+    font-size: 12px;
+    color: #000;
+    white-space: nowrap;
+}
+
+/* --- Order Selection Dropdown --- */
+.op-order-sel-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.1), 0px 2px 4px -2px rgba(0,0,0,0.1);
+    z-index: 20;
+    overflow: hidden;
+    writing-mode: horizontal-tb;
+    transform: none;
+    text-align: left;
+}
+
+.op-order-sel-dropdown.op-open {
+    display: block;
+}
+
+.op-order-sel-header {
+    padding: 10px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    border-bottom: 1px solid #e2e8f0;
+    font-family: "IBM Plex Sans", sans-serif;
+    text-transform: none;
+    white-space: nowrap;
+}
+
+.op-order-sel-options {
+    padding: 4px;
+}
+
+.op-order-sel-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    color: #020617;
+    font-family: "IBM Plex Sans", sans-serif;
+    text-transform: none;
+    white-space: nowrap;
+}
+
+.op-order-sel-option:hover {
+    background: #f5f5f5;
+}
+
+.op-order-sel-checkbox {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #0f172a;
+    border-radius: 4px;
+    opacity: 0.5;
+    flex-shrink: 0;
+}

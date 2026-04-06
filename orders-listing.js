@@ -42,4 +42,34 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // --- Order Items Modal ---
+    const orderItemsOverlay = document.getElementById('orderItemsOverlay');
+    const orderItemsClose = document.getElementById('orderItemsClose');
+
+    // Open modal when clicking any menu icon in Order Items column
+    document.querySelectorAll('.ol-icon-cell img[src*="icon-menu"]').forEach(function (icon) {
+        icon.closest('.ol-icon-cell').style.cursor = 'pointer';
+        icon.closest('.ol-icon-cell').addEventListener('click', function () {
+            if (orderItemsOverlay) {
+                orderItemsOverlay.classList.add('oi-overlay--open');
+            }
+        });
+    });
+
+    // Close modal
+    if (orderItemsClose) {
+        orderItemsClose.addEventListener('click', function () {
+            orderItemsOverlay.classList.remove('oi-overlay--open');
+        });
+    }
+
+    // Close on overlay click
+    if (orderItemsOverlay) {
+        orderItemsOverlay.addEventListener('click', function (e) {
+            if (e.target === orderItemsOverlay) {
+                orderItemsOverlay.classList.remove('oi-overlay--open');
+            }
+        });
+    }
+
 });
