@@ -1,0 +1,623 @@
+/* =============================================
+   Packaging Listing Page Styles (pk- prefix)
+   ============================================= */
+
+.pk-container {
+    padding: 24px 30px;
+    min-height: calc(100vh - 367px);
+    background: #F7F8FA;
+}
+
+/* --- Title Row --- */
+.pk-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.pk-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+}
+
+.pk-results {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+}
+
+/* --- Action Row --- */
+.pk-action-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.pk-spacer {
+    flex: 1;
+}
+
+.pk-action-buttons {
+    display: flex;
+    gap: 11px;
+    align-items: center;
+}
+
+.pk-action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+}
+
+.pk-action-btn--primary {
+    background: #17B7FF;
+}
+
+.pk-action-btn--orange {
+    background: #FF9F43;
+}
+
+/* --- Table Wrapper --- */
+.pk-table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+.pk-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    font-size: 12px;
+    table-layout: fixed;
+}
+
+/* --- Column Widths --- */
+.pk-col-id {
+    width: 80px;
+}
+
+.pk-col-timestamp {
+    width: 220px;
+}
+
+.pk-col-related {
+    width: auto;
+}
+
+.pk-col-select {
+    width: 220px;
+}
+
+.pk-col-actions {
+    width: 220px;
+}
+
+/* --- Table Header --- */
+.pk-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.pk-table thead tr {
+    background: #fff;
+}
+
+.pk-table thead th {
+    padding: 10px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.pk-table thead th.pk-th-center {
+    text-align: center;
+}
+
+/* Sortable header */
+.pk-th-sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.pk-th-sortable .pk-sort-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 2px;
+    opacity: 0.5;
+}
+
+.pk-th-sortable:hover .pk-sort-icon {
+    opacity: 1;
+}
+
+/* --- Table Body Rows --- */
+.pk-table tbody tr {
+    background: #fff;
+    border-radius: 6px;
+}
+
+.pk-table tbody td {
+    padding: 10px 12px;
+    font-size: 12px;
+    color: #000;
+    vertical-align: middle;
+}
+
+.pk-table tbody td:first-child {
+    border-radius: 20px 0 0 20px;
+}
+
+.pk-table tbody td:last-child {
+    border-radius: 0 6px 6px 0;
+}
+
+.pk-table tbody td.pk-td-center {
+    text-align: center;
+}
+
+/* --- ID link --- */
+.pk-id-link {
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* --- Related Items Text --- */
+.pk-related-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+.pk-related-text span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pk-td-related {
+    max-width: 0;
+}
+
+/* --- Select Cell (hamburger icon) --- */
+.pk-select-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.pk-select-cell img {
+    display: block;
+}
+
+/* --- Row Action Buttons --- */
+.pk-row-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7.5px;
+}
+
+.pk-row-action-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 6px;
+}
+
+.pk-row-action-btn--copy {
+    background: rgba(159, 101, 241, 0.08);
+}
+
+.pk-row-action-btn--folder {
+    background: rgba(76, 73, 255, 0.08);
+}
+
+.pk-row-action-btn--delete {
+    background: rgba(255, 73, 73, 0.08);
+}
+
+.pk-row-action-btn img {
+    width: 12px;
+    height: 12px;
+    display: block;
+}
+
+/* --- Actions Header (popover trigger) --- */
+#actionsHeader {
+    position: relative;
+    cursor: pointer;
+}
+
+/* --- Delete All Popover --- */
+.pk-popover {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 20;
+    min-width: 120px;
+    background: #fff;
+    border: 1px solid #EBEBEB;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    padding: 4px 0;
+    display: none;
+}
+
+.pk-popover--open {
+    display: block;
+}
+
+.pk-popover-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 16px;
+    font-size: 13px;
+    color: #000;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: "IBM Plex Sans", sans-serif;
+    white-space: nowrap;
+}
+
+.pk-popover-item:hover {
+    background: #F5F5F5;
+}
+
+/* --- Clickable Header --- */
+.pk-th-clickable {
+    cursor: pointer;
+    text-decoration: underline;
+    user-select: none;
+}
+
+/* =============================================
+   Selected Items Modal (pk-overlay / pk-modal)
+   ============================================= */
+
+.pk-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    align-items: center;
+}
+
+.pk-overlay.pk-overlay--open {
+    display: flex;
+}
+
+.pk-modal {
+    background: #fff;
+    border-radius: 24px;
+    padding: 24px;
+    width: 95%;
+    max-width: 900px;
+    max-height: 85vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pk-modal--wide {
+    max-width: 1750px;
+}
+
+/* --- Modal Header --- */
+.pk-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #E9E9E9;
+}
+
+.pk-modal-title {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #716F70;
+    margin: 0;
+}
+
+.pk-modal-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 90px;
+    border: none;
+    background: #00BAFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.pk-modal-close:hover {
+    background: #00a8e6;
+}
+
+/* --- Modal Table --- */
+.pk-modal-table-wrap {
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: calc(85vh - 220px);
+}
+
+.pk-modal-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 6px;
+    font-family: "IBM Plex Sans", sans-serif;
+    table-layout: fixed;
+}
+
+.pk-modal-table thead tr {
+    background: #F7F8FA;
+}
+
+.pk-modal-table thead th {
+    padding: 10px 6px;
+    font-size: 11px;
+    font-weight: 400;
+    color: #000;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+.pk-modal-table thead th:first-child {
+    border-radius: 6px 0 0 6px;
+    padding-left: 12px;
+}
+
+.pk-modal-table thead th:last-child {
+    border-radius: 0 6px 6px 0;
+}
+
+.pk-modal-table thead th .pk-sort-icon {
+    vertical-align: middle;
+    margin-right: 2px;
+    opacity: 0.5;
+}
+
+/* Rotated header */
+.pk-modal-rotated {
+    vertical-align: bottom !important;
+    height: 83px;
+    position: relative;
+}
+
+.pk-modal-rotated > span {
+    display: block;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 11px;
+    font-weight: 400;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.pk-modal-rotated--tall {
+    height: 123px;
+}
+
+.pk-modal-rotated--tall > span {
+    font-size: 10px;
+    white-space: normal;
+    max-width: 60px;
+    line-height: 1.3;
+}
+
+.pk-modal-underline {
+    text-decoration: underline;
+}
+
+/* --- Modal Body Rows --- */
+.pk-modal-table tbody tr {
+    background: #F7F8FA;
+}
+
+.pk-modal-table tbody td {
+    padding: 4px 6px;
+    font-size: 12px;
+    color: #000;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.pk-modal-table tbody td:first-child {
+    border-radius: 10px 0 0 10px;
+    padding-left: 12px;
+}
+
+.pk-modal-table tbody td:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.pk-modal-center {
+    text-align: center;
+}
+
+/* Product link */
+.pk-modal-product {
+    white-space: normal !important;
+    max-width: 150px;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.025px;
+    line-height: 1.3;
+}
+
+.pk-modal-product-link {
+    text-decoration: underline;
+    color: #000;
+}
+
+/* Preview image */
+.pk-modal-preview {
+    height: 32px;
+    width: 180px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Packaging select */
+.pk-modal-pack-select {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12px;
+    color: #000;
+    border: none;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 4px 16px 4px 0;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='5' fill='none'%3E%3Cpath d='M1 1l4 3 4-3' stroke='%23000' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+}
+
+/* Order ID link */
+.pk-modal-order-link {
+    text-decoration: underline;
+    color: #000;
+    font-size: 11px;
+}
+
+/* Checkbox */
+.pk-modal-checkbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: #17B7FF;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1.5px solid #C3C3C3;
+    border-radius: 4px;
+    background: #fff;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.pk-modal-checkbox:checked {
+    background: #17B7FF;
+    border-color: #17B7FF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='none'%3E%3Cpath d='M8.02 2.69a.5.5 0 01.09.7L4.68 7.96a.5.5 0 01-.76.03L2.06 6.02a.5.5 0 01.73-.68L4.24 6.9l3.08-4.12a.5.5 0 01.7-.09z' fill='%23fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px 10px;
+}
+
+/* P1/P2 colored cells */
+.pk-modal-p-cell {
+    padding: 0 !important;
+    width: 38px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.pk-modal-p-cell + .pk-modal-p-cell {
+    border-left: 2px solid #fff;
+}
+
+/* Trash button */
+.pk-modal-trash-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 73, 73, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+/* --- Modal Footer --- */
+.pk-modal-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 17px;
+    border-top: 1px solid #E5E7EB;
+}
+
+.pk-modal-totals {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 409px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 14px;
+    color: #000;
+}
+
+.pk-modal-total-row {
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    line-height: 1.35;
+}
+
+.pk-modal-total-value {
+    font-weight: 600;
+}
+
+.pk-modal-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.pk-modal-action-btn {
+    background: #17B7FF;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 100px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    line-height: 24px;
+}
+
+.pk-modal-action-btn:hover {
+    background: #00a8e6;
+}

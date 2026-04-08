@@ -1,0 +1,796 @@
+/* =============================================
+   Master Overview Page Styles (mo- prefix)
+   ============================================= */
+
+.mo-container {
+    padding: 24px 30px;
+    min-height: calc(100vh - 367px);
+    background: #F7F8FA;
+}
+
+/* --- Title Row --- */
+.mo-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.mo-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+}
+
+.mo-results {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+
+/* --- Filter Bar --- */
+.mo-filter-bar {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+.mo-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mo-filter-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+}
+
+.mo-filter-select {
+    height: 34px;
+    min-width: 220px;
+    padding: 0 32px 0 12px;
+    border: 1px solid #e3e3e3;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 13px;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #000;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    cursor: pointer;
+}
+
+.mo-clear-filter {
+    font-size: 13px;
+    font-weight: 400;
+    color: #000;
+    background: #fff;
+    border: 1px solid #efefef;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 0 16px;
+    height: 34px;
+    line-height: 32px;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.mo-clear-filter:hover {
+    text-decoration: underline;
+}
+
+/* --- Frames Counter Button --- */
+.mo-frames-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    min-width: 220px;
+    padding: 0 28px;
+    border-radius: 8px;
+    border: none;
+    background: #17B7FF;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "IBM Plex Sans", sans-serif;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.mo-frames-counter:hover {
+    opacity: 0.9;
+}
+
+/* --- Action Buttons (top-right circles) --- */
+.mo-action-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.mo-action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+}
+
+.mo-action-btn--primary {
+    background: #17B7FF;
+}
+
+/* --- Table Wrapper --- */
+.mo-table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+.mo-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    font-size: 12px;
+    table-layout: fixed;
+    min-width: 1720px;
+}
+
+/* --- Column Widths --- */
+.mo-col-id { width: 45px; }
+.mo-col-notes { width: 28px; }
+.mo-col-estship { width: 90px; }
+.mo-col-status { width: 122px; }
+.mo-col-person { width: 90px; }
+.mo-col-source { width: 48px; }
+.mo-col-seller { width: 110px; }
+.mo-col-customer { width: 160px; }
+.mo-col-cnotes { width: 32px; }
+.mo-col-items { width: 36px; }
+.mo-col-units { width: 40px; }
+.mo-col-assembly { width: 38px; }
+.mo-col-frames { width: 38px; }
+.mo-col-fcutting { width: 40px; }
+.mo-col-prodid { width: 90px; }
+.mo-col-engraving { width: 38px; }
+.mo-col-payment { width: 116px; }
+.mo-col-p1 { width: 60px; }
+.mo-col-p2claim { width: 40px; }
+.mo-col-p2conf { width: 60px; }
+.mo-col-delivery { width: 172px; }
+.mo-col-tracking { width: 90px; }
+.mo-col-vm { width: 40px; }
+.mo-col-extras { width: 40px; }
+.mo-col-actions { width: 52px; }
+
+/* --- Table Header --- */
+.mo-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #fff;
+}
+
+/* Group header row */
+.mo-group-header-row th {
+    padding: 6px 10px 4px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000;
+    text-align: center;
+    border-bottom: none;
+    background: #f7f8fa;
+    vertical-align: bottom;
+}
+
+.mo-group-header-row th:first-child {
+    padding-left: 0;
+}
+
+.mo-group-header-row th:last-child {
+    padding-right: 0;
+}
+
+.mo-group-header-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.mo-group-header-text {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.mo-group-header-line {
+    position: relative;
+    width: 100%;
+    height: 0;
+    border-top: 1px dashed #000;
+}
+
+.mo-diamond {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -5px;
+}
+
+.mo-diamond-left {
+    left: -1px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 7px solid #000;
+}
+
+.mo-diamond-right {
+    right: -1px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid #000;
+}
+
+/* Column header row */
+.mo-column-header-row th {
+    padding: 10px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000;
+    white-space: nowrap;
+    border-bottom: 1px solid #EBEBEB;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+.mo-column-header-row th.mo-th-center {
+    text-align: center;
+}
+
+/* Sortable header */
+.mo-th-sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.mo-th-sortable .mo-sort-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 2px;
+    opacity: 0.5;
+}
+
+.mo-th-sortable:hover .mo-sort-icon {
+    opacity: 1;
+}
+
+/* Vertical rotated headers */
+.mo-th-rotated {
+    vertical-align: bottom;
+    text-align: center;
+    min-width: 28px;
+    height: 120px;
+    position: relative;
+}
+
+.mo-th-rotated .mo-th-rotated-text {
+    display: block;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0 auto;
+}
+
+/* Underlined rotated header text */
+.mo-th-underlined .mo-th-rotated-text {
+    text-decoration: underline;
+}
+
+/* Header subtitle text */
+.mo-th-subtitle {
+    display: block;
+    font-size: 10px;
+    font-weight: 300;
+    font-style: italic;
+    color: #737373;
+    text-transform: none;
+}
+
+/* --- Table Body Rows --- */
+.mo-table tbody tr {
+    background: #fff;
+    transition: background 0.15s;
+}
+
+.mo-table tbody tr:hover {
+    background: #F5F5F5;
+}
+
+.mo-table tbody td {
+    padding: 6px 8px;
+    font-size: 12px;
+    color: #000;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mo-table tbody td.mo-td-center {
+    text-align: center;
+}
+
+/* --- ID Cell --- */
+.mo-id-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 1.3;
+}
+
+.mo-id-link {
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.mo-id-date {
+    font-size: 10px;
+    color: #808080;
+}
+
+/* --- Icon cells (notes, warnings, menu) --- */
+.mo-icon-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.mo-icon-cell img,
+.mo-icon-cell svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+/* --- Est. Shipping Cell --- */
+.mo-estship-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    line-height: 1.3;
+}
+
+.mo-estship-date {
+    font-size: 11px;
+    font-weight: 600;
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.mo-estship-date--red {
+    background: #FA0000;
+}
+
+.mo-estship-date--green {
+    background: #3CD22B;
+}
+
+.mo-estship-date--none {
+    background: transparent;
+    color: #000;
+}
+
+.mo-estship-sub {
+    font-size: 9px;
+    font-weight: 400;
+    color: #000;
+    font-style: italic;
+}
+
+/* --- Status Dropdown --- */
+.mo-status-select {
+    height: 28px;
+    padding: 0 20px 0 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #000;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23000' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.mo-status--boxed {
+    background-color: #6187C9;
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23fff' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.mo-status--preassembly {
+    background-color: #F6B000;
+}
+
+.mo-status--assembly {
+    background-color: #FFF91E;
+}
+
+.mo-status--partly-shipped {
+    background-color: #CABDF9;
+}
+
+.mo-status--ready {
+    background-color: #AFD684;
+}
+
+/* --- Status TD background colors (match the dropdown) --- */
+.mo-td-status--boxed {
+    background-color: #6187C9 !important;
+}
+
+.mo-td-status--preassembly {
+    background-color: #F6B000 !important;
+}
+
+.mo-td-status--assembly {
+    background-color: #FFF91E !important;
+}
+
+.mo-td-status--partly-shipped {
+    background-color: #CABDF9 !important;
+}
+
+.mo-td-status--ready {
+    background-color: #AFD684 !important;
+}
+
+/* --- Mini-select (person, source, seller, agent) --- */
+.mo-mini-select {
+    height: 20px;
+    padding: 0 16px 0 0;
+    border: none;
+    border-radius: 3px;
+    background: transparent;
+    font-size: 10px;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' fill='none'%3E%3Cpath d='M1 1l3 3 3-3' stroke='%23000' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 2px center;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* --- Seller/Agent Cell --- */
+.mo-seller-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.mo-seller-cell .mo-mini-select:last-child {
+    color: #999;
+    font-weight: 400;
+    font-style: italic;
+    text-transform: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' fill='none'%3E%3Cpath d='M1 1l3 3 3-3' stroke='%23999' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* --- Source Select --- */
+.mo-source-select {
+    height: 24px;
+    width: 100%;
+    padding: 0 16px 0 4px;
+    border: none;
+    border-radius: 2px;
+    background: transparent;
+    font-size: 8px;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #000;
+    text-transform: uppercase;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' fill='none'%3E%3Cpath d='M1 1l3 3 3-3' stroke='%23000' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 2px center;
+    cursor: pointer;
+}
+
+/* --- Customer Cell --- */
+.mo-td-customer--yellow {
+    background: #FDD163;
+}
+
+.mo-td-customer--white {
+    background: #fff;
+    position: relative;
+    padding-left: 30px !important;
+}
+
+.mo-customer-cell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.mo-td-customer--purple {
+    background: #D4A5F5;
+}
+
+.mo-td-customer--pink {
+    background: #F0A0D0;
+}
+
+.mo-td-customer--blue {
+    background: #87CEEB;
+}
+
+.mo-customer-info-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    display: block;
+}
+
+.mo-vip-badge {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: #4CAF50;
+
+    font-size: 8px;
+    font-weight: 700;
+    padding: 4px 2px;
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-transform: uppercase;
+    line-height: 1;
+    flex-shrink: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 22px;
+}
+
+.mo-vip-badge .mo-customer-info-icon {
+    width: 12px;
+    height: 12px;
+    writing-mode: horizontal-tb;
+    transform: rotate(180deg);
+}
+
+.mo-customer-cell span:last-child {
+    text-decoration: underline;
+}
+
+/* --- Checkbox --- */
+.mo-checkbox {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    accent-color: #17B7FF;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1.5px solid #C3C3C3;
+    border-radius: 4px;
+    background: #fff;
+    display: block;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.mo-checkbox:checked {
+    background: #17B7FF;
+    border-color: #17B7FF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='none'%3E%3Cpath d='M8.02 2.69a.5.5 0 01.09.7L4.68 7.96a.5.5 0 01-.76.03L2.06 6.02a.5.5 0 01.73-.68L4.24 6.9l3.08-4.12a.5.5 0 01.7-.09z' fill='%23fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 10px 10px;
+}
+
+/* --- Cell background colors --- */
+.mo-td-green {
+    background: #B7DBA4;
+}
+
+.mo-td-red {
+    background: #FF9F9C;
+}
+
+/* --- Green checkmark icon (Assembly Guide, F.Cutting, Engraving) --- */
+.mo-check-icon {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+
+/* --- Delivery Details Cell --- */
+.mo-delivery-cell {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+.mo-delivery-cell .mo-mini-select {
+    font-size: 9px;
+    text-transform: none;
+    font-weight: 400;
+}
+
+.mo-delivery-cell .mo-mini-select:first-child {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 10px;
+    width: 100%;
+}
+
+.mo-delivery-cell .mo-mini-select:nth-child(2),
+.mo-delivery-cell .mo-mini-select:nth-child(3) {
+    width: calc(50% - 1px);
+}
+
+/* --- Tracking Link --- */
+.mo-tracking-link {
+    text-decoration: underline;
+    color: #000;
+    font-size: 11px;
+}
+
+/* --- Menu Button --- */
+.mo-menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+}
+
+.mo-menu-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* --- Row Action Buttons (trash, copy) --- */
+.mo-row-actions {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.mo-row-action-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mo-row-action-btn--delete {
+    background: rgba(255, 73, 73, 0.08);
+}
+
+.mo-row-action-btn--copy {
+    background: rgba(159, 101, 241, 0.08);
+}
+
+.mo-row-action-btn--delete img,
+.mo-row-action-btn--copy img {
+    width: 10px;
+    height: 10px;
+    display: block;
+}
+
+/* --- P1/P2 Date Select --- */
+.mo-date-select {
+    height: 22px;
+    padding: 0 14px 0 2px;
+    border: none;
+    border-radius: 3px;
+    background: transparent;
+    font-size: 10px;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #000;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5' fill='none'%3E%3Cpath d='M1 1l3 3 3-3' stroke='%23000' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 2px center;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* --- Actions Header (underlined, popover trigger) --- */
+.mo-actions-header {
+    text-decoration: underline;
+    cursor: pointer;
+    position: relative;
+}
+
+/* --- Delete All Popover --- */
+.mo-popover {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 20;
+    min-width: 120px;
+    background: #fff;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.1), 0px 2px 4px -2px rgba(0,0,0,0.1);
+    overflow: hidden;
+    display: none;
+}
+
+.mo-popover.mo-popover--open {
+    display: block;
+}
+
+.mo-popover-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    font-size: 14px;
+    color: #020617;
+    cursor: pointer;
+    white-space: nowrap;
+    background: #fff;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.mo-popover-item:hover {
+    background: #F1F5F9;
+}

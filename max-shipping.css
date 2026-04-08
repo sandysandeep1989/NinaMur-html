@@ -1,0 +1,567 @@
+/* =============================================
+   Max Shipping / Est. Shipping Calendar (ms- prefix)
+   ============================================= */
+
+.ms-container {
+    padding: 24px 30px;
+    min-height: calc(100vh - 367px);
+    background: #F7F8FA;
+}
+
+/* --- Title Row --- */
+.ms-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.ms-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+}
+
+.ms-results {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+
+/* --- Filter Bar --- */
+.ms-filter-bar {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+.ms-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ms-filter-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+}
+
+.ms-filter-select {
+    height: 34px;
+    min-width: 220px;
+    padding: 0 32px 0 12px;
+    border: 1px solid #e3e3e3;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 13px;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #000;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    cursor: pointer;
+}
+
+.ms-clear-filter {
+    font-size: 13px;
+    font-weight: 400;
+    color: #000;
+    background: #fff;
+    border: 1px solid #efefef;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 0 16px;
+    height: 34px;
+    line-height: 32px;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.ms-clear-filter:hover {
+    text-decoration: underline;
+}
+
+/* --- Holiday Calendar Button --- */
+.ms-holiday-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    min-width: 180px;
+    padding: 0 28px;
+    border-radius: 8px;
+    border: none;
+    background: #17B7FF;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "IBM Plex Sans", sans-serif;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.ms-holiday-btn:hover {
+    opacity: 0.9;
+}
+
+/* =============================================
+   Year Navigation
+   ============================================= */
+.ms-year-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.ms-year-nav-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    border: none;
+    background: #BFBCBA;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.ms-year-nav-btn:hover {
+    opacity: 0.85;
+}
+
+.ms-year-label {
+    flex: 1;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    text-transform: uppercase;
+    background: #EEECE9;
+    border-radius: 6px;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+/* =============================================
+   Unified Table (Calendar + Data)
+   ============================================= */
+.ms-table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+.ms-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    table-layout: fixed;
+    min-width: 1930px;
+}
+
+/* --- Column Widths --- */
+.ms-col-id { width: 55px; }
+.ms-col-customer { width: 130px; }
+.ms-col-estship { width: 160px; }
+.ms-col-notes { width: 30px; }
+.ms-col-cnotes { width: 30px; }
+.ms-col-orderdate { width: 90px; }
+.ms-col-units { width: 65px; }
+.ms-col-cal-label { width: 80px; }
+.ms-col-week { width: 24px; }
+
+/* =============================================
+   Column Header Cells (rowspan in calendar area)
+   ============================================= */
+.ms-col-header-cell {
+    padding: 10px 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000;
+    white-space: nowrap;
+    border-bottom: 1px solid #EBEBEB;
+    border-right: 1px solid #EBEBEB;
+    text-align: left;
+    vertical-align: bottom;
+    font-family: "IBM Plex Sans", sans-serif;
+
+}
+
+/* Spacer cell in data rows for calendar label column */
+.ms-td-cal-spacer {
+    padding: 0 !important;
+     border-bottom: 1px solid #f0f0f0 !important;
+    background: transparent !important;
+}
+
+/* =============================================
+   Calendar Header Rows (in thead)
+   ============================================= */
+.ms-cal-month-row th,
+.ms-cal-row th,
+.ms-cal-row td {
+    border: none;
+}
+
+.ms-cal-spacer {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Month header cells */
+.ms-cal-month {
+    background: #eeece9;
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+    padding: 4px 2px;
+    border-right: 0.5px solid #fff;
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+/* Row label (WEEK, STARTING DATE, etc.) */
+.ms-cal-label {
+    text-align: right;
+    padding: 4px 8px 4px 0;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000;
+    white-space: nowrap;
+    font-family: "IBM Plex Sans", sans-serif;
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Week cells in calendar rows */
+.ms-cal-cell {
+    text-align: center;
+    padding: 4px 2px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #000;
+    border: 0.5px solid #ebebeb;
+    font-family: "IBM Plex Sans", sans-serif;
+    background: #fff;
+}
+
+/* Calendar cell color variants */
+.ms-cal-cell--blue {
+    background: #a2e0fc;
+}
+
+.ms-cal-cell--red {
+    background: #ffc9ca;
+    color: #ca0005;
+}
+
+.ms-cal-cell--green {
+    background: #c2f0c2;
+}
+
+/* =============================================
+   Column Header Row (legacy - kept for reference)
+   ============================================= */
+.ms-col-header-row th {
+    padding: 10px 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #000;
+    white-space: nowrap;
+    border-bottom: 1px solid #EBEBEB;
+    border-top: 1px solid #EBEBEB;
+    text-align: left;
+    vertical-align: bottom;
+    font-family: "IBM Plex Sans", sans-serif;
+    background: #fff;
+}
+
+.ms-col-header-row th.ms-th-center {
+    text-align: center;
+}
+
+.ms-week-th {
+    padding: 0 !important;
+    border-bottom: 1px solid #EBEBEB;
+    border-top: 1px solid #EBEBEB;
+}
+
+.ms-th-subtitle {
+    display: block;
+    font-size: 10px;
+    font-weight: 300;
+    font-style: italic;
+    color: #737373;
+    text-transform: none;
+}
+
+/* Sortable header */
+.ms-th-sortable {
+    cursor: pointer;
+    user-select: none;
+}
+
+.ms-sort-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 2px;
+    opacity: 0.5;
+}
+
+.ms-th-sortable:hover .ms-sort-icon {
+    opacity: 1;
+}
+
+/* Rotated headers */
+.ms-th-rotated {
+    vertical-align: bottom;
+    text-align: center;
+    height: 90px;
+    position: relative;
+}
+
+.ms-th-rotated .ms-th-rotated-text {
+    display: block;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0 auto;
+}
+
+.ms-th-rotated .ms-sort-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin: 0 0 2px 0;
+}
+
+/* =============================================
+   Data Rows (tbody)
+   ============================================= */
+.ms-table tbody tr {
+    background: #fff;
+    border-bottom: 5px solid #F7F8FA;
+}
+
+.ms-table tbody td {
+    padding: 6px 6px;
+    font-size: 12px;
+    color: #000;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ms-table tbody td.ms-td-center {
+    text-align: center;
+}
+
+/* --- Week cells in data rows --- */
+.ms-week-td {
+    padding: 2px !important;
+    border: 0.5px solid #f5f5f5;
+}
+
+.ms-week-td--yellow {
+    background: #FFEFA0 !important;
+}
+
+.ms-week-td--green {
+    background: #c2f0c2 !important;
+}
+
+.ms-week-td--blue {
+    background: #a2e0fc !important;
+}
+
+.ms-week-td--red {
+    background: #ffc9ca !important;
+}
+
+/* --- ID Cell --- */
+.ms-id-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 1.3;
+}
+
+.ms-id-link {
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+/* --- Customer cell colors --- */
+.ms-td-customer--yellow {
+    background: #FFEFA0 !important;
+}
+
+.ms-td-customer--green {
+    background: #c2f0c2 !important;
+}
+
+.ms-td-customer--blue {
+    background: #a2e0fc !important;
+}
+
+.ms-td-customer--red {
+    background: #ffc9ca !important;
+}
+
+.ms-customer-cell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* --- Est. Shipping Cell --- */
+.ms-estship-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    line-height: 1.3;
+}
+
+.ms-estship-date {
+    font-size: 11px;
+    font-weight: 600;
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.ms-estship-date--red {
+    background: #FA0000;
+    color: #fff;
+}
+
+.ms-estship-date--green {
+    background: #3CD22B;
+    color: #fff;
+}
+
+.ms-estship-sub {
+    font-size: 9px;
+    font-weight: 400;
+    color: #808080;
+}
+
+/* --- Status Select --- */
+.ms-status-select {
+    height: 24px;
+    padding: 0 18px 0 6px;
+    border: none;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: #000;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23000' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    cursor: pointer;
+    text-transform: uppercase;
+    white-space: nowrap;
+    max-width: 130px;
+}
+
+.ms-status--boxed {
+    background-color: #6187C9;
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23fff' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.ms-status--preassembly {
+    background-color: #AFD684;
+}
+
+.ms-status--partly-shipped {
+    background-color: #CABDF9;
+}
+
+/* --- Icon Cell --- */
+.ms-icon-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.ms-icon-cell img {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+/* --- Production Cell --- */
+.ms-production-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 1.3;
+}
+
+.ms-production-date {
+    font-size: 11px;
+    font-weight: 600;
+    color: #000;
+}
+
+.ms-production-sub {
+    font-size: 9px;
+    font-weight: 400;
+    color: #808080;
+}
+
+/* --- Units Cell --- */
+.ms-units-cell {
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+}
+
+/* --- Rotated Data Cells --- */
+.ms-td-rotated {
+    text-align: center;
+    vertical-align: middle;
+    padding: 4px 2px !important;
+    height: 60px;
+}
+
+.ms-td-rotated-text {
+    display: block;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0 auto;
+}

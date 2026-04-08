@@ -1,0 +1,468 @@
+/* ========================================
+   Finance Overview  (prefix: fo-)
+   ======================================== */
+
+/* ---------- Container ---------- */
+.fo-container {
+    padding: 20px 24px 30px;
+}
+
+/* ---------- Title ---------- */
+.fo-title {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 16px;
+}
+
+/* ---------- Filter Row ---------- */
+.fo-filter-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.fo-filter-left {
+    display: flex;
+    align-items: flex-end;
+    gap: 14px;
+}
+
+.fo-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.fo-filter-label {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #000;
+}
+
+.fo-filter-select-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.fo-filter-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: #fff;
+    border: 1px solid #D0D0D0;
+    border-radius: 8px;
+    padding: 6px 30px 6px 12px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #000;
+    min-width: 140px;
+    cursor: pointer;
+    outline: none;
+}
+
+.fo-filter-chevron {
+    position: absolute;
+    right: 10px;
+    pointer-events: none;
+    opacity: .6;
+}
+
+.fo-clear-filter {
+    background: none;
+    border: none;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #888;
+    cursor: pointer;
+    padding: 6px 0;
+    text-decoration: underline;
+}
+
+/* ---------- Action Buttons ---------- */
+.fo-action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.fo-action-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: #17B7FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity .15s;
+    padding: 0;
+}
+
+.fo-action-btn:hover {
+    opacity: .85;
+}
+
+.fo-action-btn svg {
+    flex-shrink: 0;
+}
+
+/* ============================
+   Summary Cards Section
+   ============================ */
+.fo-cards-section {
+    background: #fff;
+    border: 1px solid #EBEBEB;
+    border-radius: 14px;
+    padding: 16px 18px 24px;
+}
+
+/* ---------- Category Tabs ---------- */
+.fo-category-tabs {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 12px;
+}
+
+.fo-tab-spacer {
+    width: calc(((100% - 0px) / 7) * 2 + 0px);
+    flex-shrink: 0;
+}
+
+.fo-tab {
+    background: #DADADA;
+    border-radius: 6px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #000;
+    white-space: nowrap;
+    margin-right: 6px;
+}
+
+.fo-tab--wide {
+    width: calc(((100% - 0px) / 7) * 2 - 6px);
+}
+
+.fo-tab--flex {
+    flex: 1;
+    margin-right: 0;
+}
+
+.fo-tab-note {
+    font-weight: 400;
+    margin-left: 3px;
+    font-size: 9px;
+    color: #555;
+}
+
+/* ---------- Cards Row ---------- */
+.fo-cards-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.fo-card {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid #EBEBEB;
+    border-radius: 14px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fo-card-title {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+    margin: 0 0 10px;
+}
+
+.fo-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fo-card-body--stretch {
+    flex: 1;
+    justify-content: space-between;
+}
+
+.fo-card-body--end {
+    justify-content: flex-end;
+}
+
+/* Card Inputs (Rep No / Date) */
+.fo-card-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fo-input-wrap {
+    display: flex;
+}
+
+.fo-input {
+    width: 100%;
+    border: 1px solid #D0D0D0;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12px;
+    color: #000;
+    outline: none;
+    text-align: center;
+}
+
+.fo-calculate-btn {
+    width: 100%;
+    background: #17B7FF;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity .15s;
+}
+
+.fo-calculate-btn:hover {
+    opacity: .85;
+}
+
+/* Card Lines */
+.fo-card-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.fo-card-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 11px;
+    color: #000;
+}
+
+.fo-card-line a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.fo-card-line a:hover {
+    opacity: .7;
+}
+
+/* Highlight strips */
+.fo-highlight {
+    position: relative;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.fo-highlight--orange {
+    background: #FEB242;
+}
+
+.fo-highlight--peach {
+    background: #FFE2C7;
+}
+
+.fo-highlight--cyan {
+    background: #08C2F6;
+}
+
+.fo-highlight--lightcyan {
+    background: #AAECFF;
+}
+
+.fo-highlight--purple {
+    background: #A35DFF;
+    color: #fff;
+}
+
+.fo-highlight--purple a {
+    color: #fff;
+}
+
+.fo-highlight--lavender {
+    background: #CDAFFF;
+}
+
+.fo-highlight--yellow {
+    background: #FDFD93;
+}
+
+/* Card Total */
+.fo-card-total {
+    border-top: 1px solid #E0E0E0;
+    padding-top: 8px;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+}
+
+.fo-card-total-label {
+    font-weight: 600;
+}
+
+/* ============================
+   12 Months Timeline
+   ============================ */
+.fo-timeline-header {
+    padding: 14px 0 10px;
+    border-bottom: 1px solid #ADADAD;
+    margin-bottom: 8px;
+}
+
+.fo-timeline-title {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: #716F70;
+    margin: 0;
+}
+
+/* ---------- Timeline Table ---------- */
+.fo-timeline-table-wrap {
+    overflow-x: auto;
+}
+
+.fo-timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: "Inter", sans-serif;
+}
+
+.fo-col-label {
+    width: 260px;
+    min-width: 200px;
+}
+
+/* Head */
+.fo-timeline-table thead th {
+    background: #EEECE9;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    padding: 10px 6px;
+    white-space: nowrap;
+    border-bottom: 3px solid #fff;
+}
+
+.fo-timeline-table thead th:first-child {
+       border-radius: 10px 0 0 0;
+
+}
+
+
+
+.fo-timeline-table thead th:last-child {
+    border-radius: 0 10px 0 0;
+}
+
+/* Body */
+.fo-timeline-table tbody td {
+    font-size: 13px;
+    text-align: center;
+    padding: 9px 6px;
+    color: #000;
+    border-bottom: 3px solid #fff;
+
+}
+
+.fo-cell-label {
+    text-align: left !important;
+    padding-left: 14px !important;
+    white-space: nowrap;
+}
+
+.fo-cell-indent {
+    padding-left: 28px !important;
+}
+
+/* Section (EXPENSES / INCOMES / BALANCE) */
+.fo-row-section td {
+    background: #F7F8FA;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* Last row bottom radius */
+.fo-timeline-table tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+
+.fo-timeline-table tbody tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+
+/* Sub-row colours */
+.fo-row-orange td {
+    background: #FEB242;
+    font-style: italic;
+}
+
+.fo-row-lightorange td {
+    background: #FFD28A;
+    font-style: italic;
+}
+
+.fo-row-cyan td {
+    background: #08C2F6;
+    color: #fff;
+    font-style: italic;
+}
+
+.fo-row-lightcyan td {
+    background: #AAECFF;
+    font-style: italic;
+}
+
+.fo-row-plain td {
+    background: #F7F8FA;
+}
+
+.fo-row-purple td {
+    background: #A35DFF;
+    color: #fff;
+    font-style: italic;
+}
+
+.fo-row-lavender td {
+    background: #CDAFFF;
+    font-style: italic;
+}
+
+.fo-row-yellow td {
+    background: #FDFD93;
+    font-style: italic;
+}
